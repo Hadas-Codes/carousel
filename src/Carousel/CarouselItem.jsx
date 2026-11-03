@@ -1,6 +1,6 @@
 function CarouselItem({ src, alt }) {
   return (
-    <div className="item-carousel">
+    <div className="carousel-item">
       <img src={src} alt={alt} />
     </div>
   );
