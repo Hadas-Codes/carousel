@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Carousel from "./Carousel/Carousel";
 import RecipesCarousel from "./RecipesCarousel/RecipesCarousel";
 
@@ -9,10 +10,15 @@ const images = [
 ];
 
 function App() {
+  const [showRecipes, setShowRecipes] = useState(true);
+
   return (
     <>
       <Carousel images={images} intervalSeconds={3} />
-      <RecipesCarousel />
+      <button onClick={() => setShowRecipes((prev) => !prev)}>
+        {showRecipes ? "הסתר מתכונים" : "הצג מתכונים"}
+      </button>
+      {showRecipes && <RecipesCarousel />}
     </>
   );
 }
